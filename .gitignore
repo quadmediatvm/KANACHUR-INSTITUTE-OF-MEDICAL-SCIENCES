@@ -1,0 +1,25 @@
+# Python
+*.py
+*.pyc
+__pycache__/
+
+# Scraper data (not needed for website)
+site_data/
+scrape.py
+kanachur_scraper/
+
+# Old assets (replaced by images/)
+assets/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+
+# Node
+node_modules/
+package-lock.json
