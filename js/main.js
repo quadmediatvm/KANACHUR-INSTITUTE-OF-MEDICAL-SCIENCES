@@ -38,24 +38,43 @@ function initStickyHeader() {
 function initMobileMenu() {
   const toggleBtn = document.querySelector('.mobile-toggle');
   const navMenu = document.querySelector('.nav-menu');
+  let navOverlay = document.querySelector('.nav-overlay');
+
   if (!toggleBtn || !navMenu) return;
 
-  const toggleIcon = toggleBtn.querySelector('span') || toggleBtn;
+  // Create overlay dynamically if missing
+  if (!navOverlay) {
+    navOverlay = document.createElement('div');
+    navOverlay.className = 'nav-overlay';
+    document.body.appendChild(navOverlay);
+  }
 
   const closeMenu = () => {
     navMenu.classList.remove('open');
+    navOverlay.classList.remove('active');
     toggleBtn.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-    if (toggleIcon) toggleIcon.textContent = '☰';
+    document.body.classList.remove('nav-open');
+  };
+
+  const openMenu = () => {
+    navMenu.classList.add('open');
+    navOverlay.classList.add('active');
+    toggleBtn.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('nav-open');
   };
 
   toggleBtn.addEventListener('click', (e) => {
     e.stopPropagation();
-    const isOpen = navMenu.classList.toggle('open');
-    toggleBtn.setAttribute('aria-expanded', isOpen);
-    document.body.style.overflow = isOpen ? 'hidden' : '';
-    if (toggleIcon) toggleIcon.textContent = isOpen ? '✕' : '☰';
+    const isOpen = navMenu.classList.contains('open');
+    if (isOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
   });
+
+  // Close when clicking overlay backdrop
+  navOverlay.addEventListener('click', closeMenu);
 
   // Close when clicking nav links
   const navLinks = navMenu.querySelectorAll('a');
@@ -63,11 +82,10 @@ function initMobileMenu() {
     link.addEventListener('click', closeMenu);
   });
 
-  // Close when clicking outside menu
-  document.addEventListener('click', (e) => {
-    if (navMenu.classList.contains('open') && !navMenu.contains(e.target) && !toggleBtn.contains(e.target)) {
-      closeMenu();
-    }
+  // Close when clicking close buttons inside menu
+  const closeBtns = navMenu.querySelectorAll('.nav-menu-close');
+  closeBtns.forEach(btn => {
+    btn.addEventListener('click', closeMenu);
   });
 
   document.addEventListener('keydown', (e) => {
