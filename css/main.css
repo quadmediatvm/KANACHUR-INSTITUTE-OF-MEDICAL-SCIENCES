@@ -1,6 +1,6 @@
 /* ==========================================================================
    Kanachur Islamic Education Trust (R) - Design System & Core Styles
-   Strict adherence: 50% White, 25% Rich Green, 25% Deep Institutional Red
+   Premium Minimal White Theme (50% White, 25% Institutional Green, 25% Crimson Red)
    ========================================================================== */
 
 :root {
@@ -12,17 +12,16 @@
   --color-border-dark: #cbd5e1;
 
   /* 25% Rich Institutional Green */
-  --color-green-primary: #008744;
-  --color-green-dark: #006837;
-  --color-green-light: #e6f5ec;
-  --color-green-hover: #007038;
-  --color-green-glow: stroke rgba(0, 135, 68, 0.15);
+  --color-green-primary: #006837;
+  --color-green-dark: #004d28;
+  --color-green-light: #e8f5e9;
+  --color-green-hover: #00542c;
 
-  /* 25% Deep Institutional Red */
-  --color-red-primary: #d32f2f;
-  --color-red-dark: #b71c1c;
-  --color-red-light: #fdeded;
-  --color-red-hover: #9a0007;
+  /* 25% Deep Crimson Red */
+  --color-red-primary: #be123c;
+  --color-red-dark: #9f1239;
+  --color-red-light: #fff1f2;
+  --color-red-hover: #881337;
 
   /* Typography Colors */
   --color-text-main: #0f172a;
@@ -33,27 +32,27 @@
   /* Accents & Status */
   --color-accent-gold: #d97706;
   --color-accent-gold-light: #fef3c7;
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -1px rgba(0,0,0,0.04);
-  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -2px rgba(0,0,0,0.03);
-  --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
-  --shadow-glow-red: 0 0 20px rgba(211, 47, 47, 0.25);
-  --shadow-glow-green: 0 0 20px rgba(0, 135, 68, 0.2);
+
+  /* Subtle Clean Shadows */
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.04), 0 1px 2px rgba(15, 23, 42, 0.02);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.05), 0 2px 4px rgba(15, 23, 42, 0.02);
+  --shadow-lg: 0 10px 25px -5px rgba(15, 23, 42, 0.06), 0 4px 10px rgba(15, 23, 42, 0.02);
+  --shadow-xl: 0 20px 35px -8px rgba(15, 23, 42, 0.08), 0 8px 16px rgba(15, 23, 42, 0.03);
 
   /* Layout & Geometry */
   --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
   --radius-full: 9999px;
 
-  --font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-family-heading: 'Outfit', 'Inter', -apple-system, sans-serif;
 
-  --container-max: 1280px;
+  --container-max: 1240px;
   --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Reduced Motion Override */
@@ -101,17 +100,17 @@ body.nav-open {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-family-heading);
   font-weight: 700;
-  line-height: 1.25;
+  line-height: 1.2;
   color: var(--color-text-main);
   letter-spacing: -0.02em;
 }
 
-h1 { font-size: clamp(2.25rem, 4vw, 3.5rem); }
-h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
-h3 { font-size: clamp(1.25rem, 2vw, 1.75rem); }
-h4 { font-size: 1.25rem; }
-h5 { font-size: 1.1rem; }
-h6 { font-size: 0.95rem; }
+h1 { font-size: clamp(2rem, 3.8vw, 3.2rem); }
+h2 { font-size: clamp(1.6rem, 2.8vw, 2.2rem); }
+h3 { font-size: clamp(1.2rem, 1.8vw, 1.5rem); }
+h4 { font-size: 1.15rem; }
+h5 { font-size: 1.05rem; }
+h6 { font-size: 0.92rem; }
 
 p {
   margin-bottom: 1rem;
@@ -150,20 +149,20 @@ button, input, select, textarea {
 }
 
 .section-padding {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
 }
 
 @media (max-width: 768px) {
   .section-padding {
-    padding-top: 3.5rem;
-    padding-bottom: 3.5rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 }
 
 .grid {
   display: grid;
-  gap: 2rem;
+  gap: 1.75rem;
 }
 
 .grid-2 { grid-template-columns: repeat(2, 1fr); }
@@ -193,86 +192,86 @@ button, input, select, textarea {
   align-items: center;
 }
 
-/* Section Header Typography */
+/* Category Eyebrows & Badges */
 .section-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.35rem 1rem;
+  gap: 0.4rem;
+  padding: 0.3rem 0.75rem;
   background-color: var(--color-green-light);
   color: var(--color-green-primary);
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  border-radius: var(--radius-full);
-  margin-bottom: 1rem;
-  border: 1px solid rgba(0, 135, 68, 0.2);
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.75rem;
+  border: 1px solid rgba(0, 104, 55, 0.12);
 }
 
 .section-badge.red {
   background-color: var(--color-red-light);
   color: var(--color-red-primary);
-  border-color: rgba(211, 47, 47, 0.2);
+  border-color: rgba(190, 18, 60, 0.12);
 }
 
 .section-title {
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   position: relative;
 }
 
 .section-subtitle {
-  font-size: 1.125rem;
+  font-size: 1.05rem;
   color: var(--color-text-muted);
-  max-width: 700px;
+  max-width: 680px;
+  line-height: 1.6;
 }
 
 .text-center { text-align: center; }
 .text-center .section-subtitle { margin-left: auto; margin-right: auto; }
 
-/* Buttons & CTAs */
+/* Buttons & CTAs (Refined Clean Minimal Design) */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.6rem;
-  padding: 0.85rem 1.8rem;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
   font-family: var(--font-family-heading);
-  font-size: 0.95rem;
-  font-weight: 700;
+  font-size: 0.92rem;
+  font-weight: 600;
   border-radius: var(--radius-md);
   cursor: pointer;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   transition: all var(--transition-fast);
   text-decoration: none;
-  white-space: normal;
-  word-break: break-word;
+  white-space: nowrap;
 }
 
 .btn-primary {
   background-color: var(--color-red-primary);
   color: var(--color-white);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 2px 4px rgba(190, 18, 60, 0.15);
 }
 
 .btn-primary:hover {
   background-color: var(--color-red-hover);
   color: var(--color-white);
-  box-shadow: var(--shadow-glow-red);
-  transform: translateY(-2px);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(190, 18, 60, 0.25);
 }
 
 .btn-secondary {
   background-color: var(--color-green-primary);
   color: var(--color-white);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 2px 4px rgba(0, 104, 55, 0.15);
 }
 
 .btn-secondary:hover {
   background-color: var(--color-green-dark);
   color: var(--color-white);
-  box-shadow: var(--shadow-glow-green);
-  transform: translateY(-2px);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 104, 55, 0.25);
 }
 
 .btn-outline-green {
@@ -284,29 +283,87 @@ button, input, select, textarea {
 .btn-outline-green:hover {
   background-color: var(--color-green-primary);
   color: var(--color-white);
-  transform: translateY(-2px);
+  transform: translateY(-1px);
+}
+
+.btn-outline-red {
+  background-color: transparent;
+  border-color: var(--color-red-primary);
+  color: var(--color-red-primary);
+}
+
+.btn-outline-red:hover {
+  background-color: var(--color-red-primary);
+  color: var(--color-white);
+  transform: translateY(-1px);
 }
 
 .btn-outline-white {
   background-color: transparent;
-  border-color: var(--color-white);
-  color: var(--color-white);
+  border-color: var(--color-border);
+  color: var(--color-text-main);
 }
 
 .btn-outline-white:hover {
-  background-color: var(--color-white);
-  color: var(--color-green-primary);
-  transform: translateY(-2px);
+  background-color: var(--color-offwhite);
+  border-color: var(--color-border-dark);
+  transform: translateY(-1px);
 }
 
 /* Scroll Animations */
 .reveal-on-scroll {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .reveal-on-scroll.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Utility Section Fills */
+.bg-fill-green {
+  background-color: var(--color-green-primary) !important;
+  color: #ffffff !important;
+}
+
+.bg-fill-green h1,
+.bg-fill-green h2,
+.bg-fill-green h3,
+.bg-fill-green h4,
+.bg-fill-green p,
+.bg-fill-green span,
+.bg-fill-green strong {
+  color: #ffffff !important;
+}
+
+.bg-fill-green p {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.bg-fill-red {
+  background-color: var(--color-red-primary) !important;
+  color: #ffffff !important;
+}
+
+.bg-fill-red h1,
+.bg-fill-red h2,
+.bg-fill-red h3,
+.bg-fill-red h4,
+.bg-fill-red p,
+.bg-fill-red span,
+.bg-fill-red strong {
+  color: #ffffff !important;
+}
+
+.bg-fill-red p {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.section-badge.white-fill {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
